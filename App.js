@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {View, Text, FlatList, Switch} from 'react-native';
 
 function App() {
@@ -19,6 +19,9 @@ function App() {
       ? setCafeList(cafeList.filter(cafe => cafe.isFavorite))
       : setCafeList(data);
   }
+  useEffect(()=>{
+    console.log('listeleme başarılı')
+  },[cafeList])
 
   return (
     <View>
